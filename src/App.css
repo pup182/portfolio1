@@ -553,26 +553,55 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
-  /* All flex containers should have flex-direction: column */
+  #navbar ul li a {
+    font-size: 15px;
+  }
+
+  #navbar ul {
+    justify-content: center;
+    gap: 1em;
+  }
+
   .left-side,
-  .right-side,
-  .about-me {
+  .right-side {
     flex-direction: column;
     align-items: center;
   }
 
-  /* Adjustments for specific elements */
-  .welcome-container {
-    flex-direction: column;
-    align-items: center;
+  .right-side h1 {
+    font-size: small;
   }
 
-  .mountain-container {
-    height: auto; /* Adjust height to fit content */
+  .left-side h1 {
+    font-size: 10px;
   }
 
+  .welcome-img {
+    height: 75px;
+    width: auto;
+  }
+
+  .left-side,
+  .right-side h2 {
+    font-size: smaller;
+  }
+
+  .mountain-img {
+    width: 175vw;
+    position: relative;
+    top: 0;
+    opacity: 0.5;
+  }
+
+  .dragon-image {
+    position: absolute;
+    height: 500px;
+    right: -200px;
+    top: -25px;
+    z-index: 0;
+  }
   .skills-ed-container {
-    grid-template-columns: 1fr; /* Change to grid-template-columns: 1fr; */
-    grid-template-rows: auto; /* Add grid-template-rows: auto; */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 }

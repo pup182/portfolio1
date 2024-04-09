@@ -112,7 +112,7 @@ export function SkillsAndEducation() {
               Associate of Applied Science in Game Design - Austin Community
               College
             </p>
-            <img src="diploma.jpg" alt="diploma" class="diploma" />
+            <img src="diploma.JPG" alt="diploma" class="diploma" />
           </div>
           <div className="award-item">
             <p>
@@ -126,7 +126,7 @@ export function SkillsAndEducation() {
                 You can view my certification here.
               </a>
             </p>
-            <img src="fcc.jpg" alt="responsive-web-cert" class="diploma" />
+            <img src="fcc.JPG" alt="responsive-web-cert" class="diploma" />
           </div>
           <p></p>
         </div>
