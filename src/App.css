@@ -551,3 +551,28 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+  /* All flex containers should have flex-direction: column */
+  .left-side,
+  .right-side,
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjustments for specific elements */
+  .welcome-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mountain-container {
+    height: auto; /* Adjust height to fit content */
+  }
+
+  .skills-ed-container {
+    grid-template-columns: 1fr; /* Change to grid-template-columns: 1fr; */
+    grid-template-rows: auto; /* Add grid-template-rows: auto; */
+  }
+}
