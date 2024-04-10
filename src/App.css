@@ -568,6 +568,23 @@ footer {
     align-items: center;
   }
 
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .about-me-right-side {
+    width: 70%;
+  }
+  .about-me > * {
+    margin: 0;
+  }
+
+  .about-me-right-side img {
+    height: 15em;
+  }
+
   .right-side h1 {
     font-size: small;
   }
