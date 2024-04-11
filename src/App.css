@@ -553,72 +553,62 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
-  /* Adjust navbar layout and font size for better readability */
-  #navbar ul {
-    flex-direction: column;
-    padding: 0;
-  }
-
-  #navbar ul li a {
-    font-size: 16px; /* Increased font size for better readability */
-    padding: 10px 0; /* Add padding for larger touch targets */
-  }
-
-  /* Stack left and right sections on top of each other for a linear, scrollable layout */
-  .left-side,
-  .right-side {
-    width: 90%; /* Adjust width to fit mobile screens */
-    height: auto; /* Adjust height to content */
-    padding: 20px; /* Increase padding for better spacing */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Add gap between elements */
-  }
-
-  /* Adjust welcome section image for smaller screens */
-  .welcome-img {
-    width: 6em; /* Adjust image size */
+  /* Fix the stacking context issue by adjusting the z-index */
+  .dragon-image {
+    z-index: -1; /* Send the dragon image to the back */
+    width: 100%; /* Adjust width to be more responsive */
+    right: 0; /* Align right to 0 to prevent overflow */
+    top: 0; /* Align top to 0 for consistency */
     height: auto; /* Maintain aspect ratio */
   }
 
-  /* Simplify project tiles layout */
-  .project-tile {
-    flex-basis: 90%; /* Allow tiles to take more width on smaller screens */
-    height: auto; /* Adjust height to content */
+  /* Ensure background colors are applied correctly */
+  .left-side,
+  .right-side,
+  .about-me-left-side {
+    background-color: rgba(255, 218, 94, 0.9); /* Reaffirm background color */
+    background-blend-mode: overlay; /* Check if blend mode is causing issues */
+    background-image: var(--img-url); /* Reaffirm background image */
   }
 
-  /* Adjust about me section for a single column layout */
-  .about-me {
-    flex-direction: column;
-    padding: 20px; /* Add padding for better spacing */
-  }
-
-  .about-me-left-side,
+  /* Adjust about-me-right-side sizing and layout */
   .about-me-right-side {
-    width: 100%; /* Full width for mobile */
-    max-width: none; /* Remove max-width restriction */
-    margin: 0 auto; /* Center align */
+    max-width: 100%; /* Limit width to 100% of parent */
+    flex-wrap: wrap; /* Allow items to wrap */
+    align-items: flex-start; /* Align items to start to handle different heights */
+    padding: 10px; /* Reduce padding to save space */
+    font-size: 14px; /* Adjust font size for better readability */
+    overflow: hidden; /* Hide overflow to prevent breaking layout */
   }
 
+  /* Adjust about-me-right-side image for better fitting */
   .about-me-right-side img {
-    height: auto; /* Adjust based on width */
-    width: 80%; /* Make image width responsive */
-    margin-left: 0; /* Align image properly */
+    max-width: 100%; /* Ensure image does not overflow */
+    height: auto; /* Adjust height automatically */
   }
 
-  /* Adjust skills and education container for a single column layout */
-  .skills-ed-container {
-    display: block; /* Stack vertically */
+  /* Prevent layout break on zoom out */
+  html {
+    min-width: 100vw; /* Minimum width of viewport to prevent horizontal scroll */
   }
 
-  /* Improve readability and interaction */
-  .contact-info {
-    flex-direction: column; /* Stack contact info vertically */
-    gap: 15px; /* Add gap for better separation */
+  /* Reconfigure navbar for better mobile interaction */
+  #navbar ul {
+    flex-direction: column;
+    width: 100%; /* Full width to better accommodate vertical layout */
+    margin: 0; /* Reset margin to ensure alignment */
+    padding: 5px; /* Add padding for touch targets */
   }
 
-  .contact-info div {
-    justify-content: center; /* Center-align contact info */
+  #navbar ul li a {
+    font-size: 16px; /* Adjust font size for readability */
+    padding: 10px 0; /* Increase padding for easier tap */
+  }
+
+  /* Adjust project tiles to be more responsive */
+  .project-tile {
+    width: 100%; /* Full width for better visibility on mobile */
+    padding: 15px; /* Adjust padding to create more space */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Soften the shadow for smaller screens */
   }
 }
