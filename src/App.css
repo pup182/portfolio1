@@ -553,73 +553,72 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
-  #navbar ul li a {
-    font-size: 15px;
-  }
-
+  /* Adjust navbar layout and font size for better readability */
   #navbar ul {
-    justify-content: center;
-    gap: 1em;
+    flex-direction: column;
+    padding: 0;
   }
 
+  #navbar ul li a {
+    font-size: 16px; /* Increased font size for better readability */
+    padding: 10px 0; /* Add padding for larger touch targets */
+  }
+
+  /* Stack left and right sections on top of each other for a linear, scrollable layout */
   .left-side,
   .right-side {
+    width: 90%; /* Adjust width to fit mobile screens */
+    height: auto; /* Adjust height to content */
+    padding: 20px; /* Increase padding for better spacing */
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 218, 94, 0.9);
+    justify-content: center;
+    gap: 20px; /* Add gap between elements */
   }
 
+  /* Adjust welcome section image for smaller screens */
+  .welcome-img {
+    width: 6em; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Simplify project tiles layout */
+  .project-tile {
+    flex-basis: 90%; /* Allow tiles to take more width on smaller screens */
+    height: auto; /* Adjust height to content */
+  }
+
+  /* Adjust about me section for a single column layout */
   .about-me {
     flex-direction: column;
-    align-items: center;
-    gap: 1em;
+    padding: 20px; /* Add padding for better spacing */
   }
 
+  .about-me-left-side,
   .about-me-right-side {
-    width: 70%;
-  }
-  .about-me > * {
-    margin: 0;
+    width: 100%; /* Full width for mobile */
+    max-width: none; /* Remove max-width restriction */
+    margin: 0 auto; /* Center align */
   }
 
   .about-me-right-side img {
-    height: 15em;
+    height: auto; /* Adjust based on width */
+    width: 80%; /* Make image width responsive */
+    margin-left: 0; /* Align image properly */
   }
 
-  .right-side h1 {
-    font-size: small;
-  }
-
-  .left-side h1 {
-    font-size: 10px;
-  }
-
-  .welcome-img {
-    height: 75px;
-    width: auto;
-  }
-
-  .left-side,
-  .right-side h2 {
-    font-size: smaller;
-  }
-
-  .mountain-img {
-    width: 100%;
-    position: relative;
-    top: 0;
-    opacity: 0.5;
-  }
-
-  .dragon-image {
-    position: absolute;
-    height: 500px;
-    right: -200px;
-    top: -25px;
-    z-index: 0;
-  }
+  /* Adjust skills and education container for a single column layout */
   .skills-ed-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    display: block; /* Stack vertically */
+  }
+
+  /* Improve readability and interaction */
+  .contact-info {
+    flex-direction: column; /* Stack contact info vertically */
+    gap: 15px; /* Add gap for better separation */
+  }
+
+  .contact-info div {
+    justify-content: center; /* Center-align contact info */
   }
 }
